@@ -8,7 +8,6 @@ ANDROID_PLATFORM="android-21"
 
 # In my case, FindJNI.cmake does not find java, so i had to manually specify these
 # You could try without it and remove the cmake variable specification at the bottom of this file
-JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64
 JAVA_AWT_LIBRARY=$JAVA_HOME/jre/lib/amd64
 JAVA_JVM_LIBRARY=$JAVA_HOME/jre/lib/amd64
 JAVA_INCLUDE_PATH=$JAVA_HOME/include
