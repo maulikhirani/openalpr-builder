@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # You should tweak this section to adapt the paths to your need
-export ANDROID_HOME=/home/jeremy/Android/Sdk
-export NDK_ROOT=/home/jeremy/Android/Sdk/ndk-bundle
+# export ANDROID_HOME=/home/jeremy/Android/Sdk
+# export NDK_ROOT=/home/jeremy/Android/Sdk/ndk-bundle
 
 ANDROID_PLATFORM="android-21"
 
