@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      - name: Install build essentials
+        run: sudo apt-get install -y build-essential
+      
       - uses: AdoptOpenJDK/install-jdk@v1
         with:
           version: '8'
