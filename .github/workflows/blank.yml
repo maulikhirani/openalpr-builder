@@ -39,7 +39,7 @@ jobs:
       - uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
-          ndk-version: r16
+          ndk-version: r14
           add-to-path: false
           
       # Runs a single command using the runners shell
@@ -47,9 +47,8 @@ jobs:
         run: ./build_openalpr_android.sh
         env:
           NDK_ROOT: ${{ steps.setup-ndk.outputs.ndk-path }}
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          
+      - uses: actions/upload-artifact@v3
+        with:
+         name: my-artifact
+         path: openalpr
