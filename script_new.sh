@@ -78,7 +78,7 @@ echo 'export ANDROID_HOME=$HOME/android-sdk-linux' >> ~/.bashrc
 echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> ~/.bashrc
 
 source ~/.bashrc
-echo y | sudo sdk manager --sdk_root=$ANDROID_HOME --licenses
+echo y | sudo sdkmanager --sdk_root=$ANDROID_HOME --licenses
 
 # Make sure you can execute 32 bit executables if this is 64 bit machine, otherwise skip this
 sudo dpkg --add-architecture i386
