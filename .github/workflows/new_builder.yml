@@ -27,7 +27,7 @@ jobs:
           
       # Runs a single command using the runners shell
       - name: Run build command
-        run: ./script_2.sh
+        run: ./script_new.sh
           
       - uses: actions/upload-artifact@v3
         with:
