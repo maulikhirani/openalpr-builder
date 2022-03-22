@@ -78,17 +78,18 @@ echo 'export ANDROID_HOME=$HOME/android-sdk-linux' >> ~/.bashrc
 echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> ~/.bashrc
 
 source ~/.bashrc
+echo y | sudo sdk manager --sdk_root=$ANDROID_HOME --licenses
 
 # Make sure you can execute 32 bit executables if this is 64 bit machine, otherwise skip this
-dpkg --add-architecture i386
-apt-get update
-apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
 
 # Add some swap space, useful if you've got less than 2G of RAM
-fallocate -l 2G /swapfile 
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
+sudo fallocate -l 2G /swapfile 
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
 
 # Optionally run build system as daemon (speeds up build process)
 mkdir ~/.gradle
@@ -159,12 +160,8 @@ cp **/*.h $SCRIPTPATH/openalpr/src/openalpr/ocr/tesseract
 
 cd $SCRIPTPATH
 
-declare -a ANDROID_ABIS=("armeabi"
-			 "armeabi-v7a"
-			 "armeabi-v7a with NEON"
+declare -a ANDROID_ABIS=("armeabi-v7a"
 			 "arm64-v8a"
-			 "mips"
-			 "mips64"
 			 "x86"
 			 "x86_64"
 			)
