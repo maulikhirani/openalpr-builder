@@ -120,6 +120,7 @@ Generating project for arch $i
 	-DJpgt_LIB=$TESSERACT_LIB_DIR/libjpgt.so \
 	-DJnigraphics_LIB=$NDK_ROOT/platforms/$ANDROID_PLATFORM/arch-$arch/usr/$lib/libjnigraphics.so \
 	-DANDROID_ARM_MODE=arm \
+	-Wl,--no-undefined \
 	../../src/
 
     cmake --build . -- -j 8
