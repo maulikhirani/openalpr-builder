@@ -56,12 +56,8 @@ cp **/*.h $SCRIPTPATH/openalpr/src/openalpr/ocr/tesseract
 
 cd $SCRIPTPATH
 
-declare -a ANDROID_ABIS=("armeabi"
-			 "armeabi-v7a"
-			 "armeabi-v7a with NEON"
+declare -a ANDROID_ABIS=("armeabi-v7a"
 			 "arm64-v8a"
-			 "mips"
-			 "mips64"
 			 "x86"
 			 "x86_64"
 			)
@@ -124,8 +120,6 @@ Generating project for arch $i
 	-DJpgt_LIB=$TESSERACT_LIB_DIR/libjpgt.so \
 	-DJnigraphics_LIB=$NDK_ROOT/platforms/$ANDROID_PLATFORM/arch-$arch/usr/$lib/libjnigraphics.so \
 	-DANDROID_ARM_MODE=arm \
-	-Wl,--exclude-libs,libippicv.a \
-	-Wl,--exclude-libs,libippiw.a \
 	../../src/
 
     cmake --build . -- -j 8
